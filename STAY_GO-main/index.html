@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>STAYGO — Your Travel Buddy</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+    /* Page fade-in animation */
+    body {
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+    body.loaded {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GLOBAL NAVBAR -->
+  <header class="navbar container" id="navbar">
+    <div class="nav-left">
+      <a href="#" id="home-link">
+        <img src="staygo-logo.png" alt="STAYGO Logo" class="brand-logo">
+      </a>
+    </div>
+    <div class="nav-right">
+      <div class="avatar" id="nav-user" title="Click to sign out">Not Logged In</div>
+    </div>
+  </header>
+
+  <!-- LOGIN PAGE -->
+  <main id="login-page" class="page active container">
+    <div class="login-layout">
+      <div class="login-visual">
+        <img src="updat.png" alt="Login Illustration" class="login-hero">
+      </div>
+      <div class="form-card">
+        <h2>Welcome to STAYGO</h2>
+        <p class="muted">Sign in to book your dream hotel and rent your perfect travel car.</p>
+        <div class="form-row">
+          <label for="login-identifier">Phone or Email</label>
+          <input id="login-identifier" type="text" placeholder="Enter phone or email">
+        </div>
+        <div class="form-row">
+          <label for="login-password">Password</label>
+          <input id="login-password" type="password" placeholder="Enter password">
+        </div>
+        <div class="row-between">
+          <button id="btn-login" type="button" class="btn">Login</button>
+          <button id="btn-create" type="button" class="btn alt">Create New Account</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- CREATE ACCOUNT PAGE -->
+  <main id="create-page" class="page container">
+    <div class="form-card small-center">
+      <h2>Create a New Account</h2>
+      <div class="form-row">
+        <label for="reg-name">Full Name</label>
+        <input id="reg-name" type="text" placeholder="Enter your full name">
+      </div>
+      <div class="form-row">
+        <label for="reg-identifier">Phone or Email</label>
+        <input id="reg-identifier" type="text" placeholder="Enter phone or email">
+      </div>
+      <div class="form-row">
+        <label for="reg-password">Password</label>
+        <input id="reg-password" type="password" placeholder="Create a password">
+      </div>
+      <div class="row-between">
+        <button id="reg-cancel" type="button" class="btn alt">Cancel</button>
+        <button id="reg-submit" type="button" class="btn">Sign Up</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- HOME PAGE -->
+  <main id="home-page" class="page container">
+    <h1>Welcome to STAYGO</h1>
+    <p class="muted">Choose your travel service below.</p>
+    <div class="grid-2">
+      <div class="big-card" id="card-car">
+        <img src="CAR_BG.jpg" alt="Rent Cars" />
+        <div class="caption">Rent Your Dream Travel Car</div>
+      </div>
+      <div class="big-card" id="card-hotel">
+        <img src="HOTEL_BG.jpg" alt="Book Hotels" />
+        <div class="caption">Book Your Paradise Hotel</div>
+      </div>
+    </div>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <div class="about-title">About Us</div>
+          <p class="muted">
+            STAYGO is your trusted travel companion where you can easily book hotels for your stay
+            and rent cars for your journeys.
+          </p>
+          <div class="copyright">© <span id="year"></span> STAYGO. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- HOTEL PAGE -->
+  <main id="hotel-page" class="page container">
+    <header class="sub-nav">
+      <div class="nav-left">
+        <a href="#" id="hotel-home-link">
+          <img src="staygo-logo.png" alt="STAYGO Logo" class="brand-logo-small">
+        </a>
+      </div>
+      <div class="nav-center">
+        <input type="text" placeholder="Search hotels..." class="search-bar" />
+      </div>
+      <div class="nav-right">
+        <div id="hotel-user" class="avatar">Account</div>
+        <button class="btn alt" id="hotel-home-btn" type="button">Home</button>
+      </div>
+    </header>
+
+    <h2>Available Hotels</h2>
+    <div class="cards-grid" id="hotel-cards"></div>
+    <footer class="site-footer">
+      <p>Find and book your perfect hotel with ease.</p>
+    </footer>
+  </main>
+
+  <!-- CAR PAGE -->
+  <main id="car-page" class="page container">
+    <header class="sub-nav">
+      <div class="nav-left">
+        <a href="#" id="car-home-link">
+          <img src="staygo-logo.png" alt="STAYGO Logo" class="brand-logo-small">
+        </a>
+      </div>
+      <div class="nav-center">
+        <input type="text" placeholder="Search cars..." class="search-bar" />
+      </div>
+      <div class="nav-right">
+        <div id="car-user" class="avatar">Account</div>
+        <button class="btn alt" id="car-home-btn" type="button">Home</button>
+      </div>
+    </header>
+
+    <h2>Available Cars</h2>
+    <div class="cards-grid" id="car-cards"></div>
+    <footer class="site-footer">
+      <p>Choose and book the car that fits your travel needs.</p>
+    </footer>
+  </main>
+
+  <script src="./script.js" defer></script>
+  <script>
+    // Trigger fade-in effect
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
+</html>
